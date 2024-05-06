@@ -110,3 +110,16 @@ function sameFrequency(int1, int2){
   sameFrequency(34,14) // false
   sameFrequency(3589578, 5879385) // true
   sameFrequency(22,222) // false
+
+function areThereDuplicates() {
+    // const base = Array.from(arguments);
+    // const unique = new Set(base);
+    
+    // return base.length !== unique.size;
+    return new Set(arguments).size !== arguments.length;
+}
+
+areThereDuplicates(1, 2, 3) // false
+areThereDuplicates(1, 2, 2) // true 
+areThereDuplicates('a', 'b', 'c', 'a') // true 
+  
