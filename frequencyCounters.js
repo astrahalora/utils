@@ -83,3 +83,30 @@ function anagrams(str1, str2) {
 console.log(anagrams("sugar", "rsuga"))
 console.log(anagrams("mith", "mibt"))
 
+function sameFrequency(int1, int2){
+    const int1Array = Array.from(String(int1), Number);
+    const int2Array = Array.from(String(int2), Number);
+
+    if(int1Array.length !== int2Array.length) return false;
+
+    const frequencyCounter = {};
+
+    for(let digit of int1Array) {
+        frequencyCounter[digit] = ++frequencyCounter[digit] || 1;
+    }
+
+    for(let digit of int2Array) {
+        if(!frequencyCounter[digit]) {
+            return false;
+        } else {
+            frequencyCounter[digit]--
+        }
+    }
+
+    return true;
+  }
+
+  sameFrequency(182,281) // true
+  sameFrequency(34,14) // false
+  sameFrequency(3589578, 5879385) // true
+  sameFrequency(22,222) // false
