@@ -2,15 +2,15 @@
 
 function search(arr, num) {
     let min = 0;
-    let max = arr.length -1;
+    let max = arr.length - 1;
 
-    while(min <= max) {
+    while (min <= max) {
         let middle = Math.floor((min + max) / 2);
         let currentElement = arr[middle];
 
-        if(currentElement < num) {
+        if (currentElement < num) {
             min = middle + 1;
-        } else if( currentElement > num) {
+        } else if (currentElement > num) {
             max = middle - 1;
         } else {
             return middle;
@@ -72,4 +72,3 @@ const americanStates = [
     "Wisconsin",
     "Wyoming"
 ];
-
