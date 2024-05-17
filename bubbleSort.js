@@ -20,7 +20,7 @@ console.log(bubbleSort([5,1,76,3,67,23,89,2]));
 
 // refactored for case where array is almost sorted making less passes
 // IF YOU KNOW YOUR DATA IS VERY NEARLY SORTED 
-// THIS BUBBLE SWAP IS A GOOD ALGORITH TO USE
+// THIS BUBBLE SWAP IS A GOOD ALGORITHM TO USE
 function bubbleSort(arr) {
     let noSwaps;
     for(let i = arr.length; i > 0; i--) {
