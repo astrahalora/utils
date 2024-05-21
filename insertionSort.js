@@ -13,3 +13,4 @@ function insertionSort(arr) {
 console.log(insertionSort([3,2,6,34,12,67]));
 
 //O(n^2), good for nearly sorted data 
+// good for small dataset

@@ -37,3 +37,5 @@ function bubbleSort(arr) {
     }
     return arr;
 }
+
+// O(n^2), good for small dataset

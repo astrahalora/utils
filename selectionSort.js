@@ -14,3 +14,4 @@ function selectionSort(arr) {
 }
 
 // time complexity of O(n^2), not efficient
+// good for small dataset
