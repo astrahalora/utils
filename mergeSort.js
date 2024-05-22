@@ -1,3 +1,4 @@
+// ASC merge
 function merge(arr1, arr2) {
     const results = [];
     let i = 0;
@@ -43,3 +44,6 @@ function mergeSort(arr) {
 }
 
 console.log(mergeSort([88,33,2,55,1,3,7,3,9,2,14,5,6,33,65,78,23]))
+
+// O(n log n) time complexity, more efficient for unsorted arrays
+// O(n) space complexity
