@@ -68,7 +68,7 @@ class SinglyLinkedList {
         return currentHead;
     }
 
-    unshift() {
+    unshift(val) {
         let newNode = new Node(val);
         if(!this.head) {
             this.head = newNode;
@@ -124,6 +124,16 @@ class SinglyLinkedList {
         return removed;
     }
 
+    print() {
+        const arr = [];
+        let current = this.head;
+        while(current) {
+            arr.push(current.val);
+            current = current.next;
+        }
+        return console.log(arr);
+    }
+
     reverse() {
         let node = this.head;
         this.head = this.tail;
@@ -140,4 +150,14 @@ class SinglyLinkedList {
     }
 }
 
-console.log(first);
+const firstList = new SinglyLinkedList();
+firstList.push("La La LA");
+firstList.push("CHa cha CHa");
+firstList.push("Da ba da");
+
+firstList.insert(1, "Bi bum Ba");
+firstList.unshift("Baaaaaa");
+firstList.remove(0);
+console.log(firstList.get(1))
+firstList.set(1, "Bi Bum Ga")
+firstList.print();
