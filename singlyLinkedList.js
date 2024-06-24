@@ -1,6 +1,6 @@
 // piece of data - val
 // reference to the next node
-// good for insertions/deletions
+// good for insertions/deletions at the beginning
 // not so good when accessing data
 
 class Node {
@@ -17,6 +17,7 @@ class SinglyLinkedList {
         this.length = 0;
     }
 
+    // O(1)
     push(val) {
         let newNode = new Node(val);
         if(!this.head) {
@@ -38,6 +39,7 @@ class SinglyLinkedList {
         }
     }
 
+    // O(n)
     pop() {
         if(!this.head) return undefined;
         let current = this.head;
@@ -56,6 +58,7 @@ class SinglyLinkedList {
         return current;
     }
 
+    // O(1)
     shift() {
         if(!this.head) return undefined;
         let currentHead = this.head;
@@ -68,6 +71,7 @@ class SinglyLinkedList {
         return currentHead;
     }
 
+    // O(1)
     unshift(val) {
         let newNode = new Node(val);
         if(!this.head) {
@@ -81,6 +85,7 @@ class SinglyLinkedList {
         return this;
     }
 
+    // O(n)
     get(index) {
         if(index < 0 || index >= this.length) return null;
         let count = 0;
@@ -92,6 +97,7 @@ class SinglyLinkedList {
         return current;
     }
 
+    // O(n)
     set(index, val) {
         let foundNode = this.get(index);
         if(foundNode) {
@@ -101,6 +107,7 @@ class SinglyLinkedList {
         return false;
     }
 
+    // O(n)
     insert(index, val) {
         if(index < 0 || index > this.length) return false;
         if(index === this.length) return !!this.push(val);
@@ -113,6 +120,7 @@ class SinglyLinkedList {
         return true;
     }
 
+    // O(n)
     remove(index) {
         if(index < 0 || index > this.length) return undefined;
         if(index === this.length-1) return this.pop();
@@ -124,6 +132,7 @@ class SinglyLinkedList {
         return removed;
     }
 
+    // O(n)
     print() {
         const arr = [];
         let current = this.head;
@@ -134,6 +143,7 @@ class SinglyLinkedList {
         return console.log(arr);
     }
 
+    // O(n)
     reverse() {
         let node = this.head;
         this.head = this.tail;
