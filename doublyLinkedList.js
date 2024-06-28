@@ -59,7 +59,7 @@ class DoublyLinkedList {
             oldHead.next = null;
         }
         this.length--;
-        return oldHead
+        return oldHead;
     }
 
     unshift(val) {
@@ -74,6 +74,15 @@ class DoublyLinkedList {
         }
         this.length++;
         return this;
+     }
+
+     get(index) {
+        if(index < 0 || index >= this.length) return null;
+        if(index <= Math.floor(this.length/2)) {
+            for(let i = 0; i < Math.floor(this.length/2); i++) {
+                
+            }
+        }
      }
 }
 
