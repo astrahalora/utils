@@ -110,14 +110,30 @@ class DoublyLinkedList {
         if(index < 0 || index >= this.length) return false;
         if(index === 0) return this.unshift(val);
         if(index === this.length) return this.push(val);
+
         let newNode = new Node(val);
         let beforeNode = this.get(index-1);
         let afterNode = beforeNode.next;
+
         beforeNode.next = newNode;
         newNode.next = afterNode;
         afterNode.prev = newNode;
         this.length++;
         return true;
+     }
+
+     remove(index) {
+        if(index < 0 || index >= this.length) return false;
+        if(index === 0) return this.shift();
+        if(index === this.length-1) return this.pop();
+
+        let nodeToRemove = this.get(index);
+        nodeToRemove.prev.next = nodeToRemove.next;
+        nodeToRemove.next.prev = nodeToRemove.prev;
+        nodeToRemove.next = null;
+        nodeToRemove.prev = null;
+        this.length--;
+        return nodeToRemove;
      }
 }
 
@@ -132,4 +148,4 @@ firstDoublyList.push("wool");
 firstDoublyList.push("sock");
 firstDoublyList.push("hat");
 
-display(firstDoublyList.set(0, "tin can"))
+display(firstDoublyList.remove(7));
