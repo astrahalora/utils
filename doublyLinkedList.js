@@ -96,6 +96,15 @@ class DoublyLinkedList {
         }
         return current;
      }
+
+     set(index, val) {
+        let foundNode = this.get(index);
+        if(foundNode != null) {
+            foundNode.val = val;
+            return true;
+        }
+        return false;
+     }
 }
 
 let firstDoublyList = new DoublyLinkedList();
@@ -109,4 +118,4 @@ firstDoublyList.push("wool");
 firstDoublyList.push("sock");
 firstDoublyList.push("hat");
 
-display(firstDoublyList.get(3))
+display(firstDoublyList.set(0, "tin can"))
