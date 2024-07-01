@@ -78,11 +78,26 @@ class DoublyLinkedList {
 
      get(index) {
         if(index < 0 || index >= this.length) return null;
-        if(index <= Math.floor(this.length/2)) {
-            for(let i = 0; i < Math.floor(this.length/2); i++) {
-                
+        if(index <= this.length/2) {
+            console.log("Working from start")
+            let count = 0;
+            let current = this.head;
+            while(count !== index) {
+                current = current.next;
+                count++;
             }
+            return current;
+        } else {
+            console.log("Working from end")
+            let count = this.length-1;
+            let current = this.tail;
+            while(count !== index) {
+                current = current.prev;
+                count--;
+            }
+            return current;
         }
+        
      }
 }
 
@@ -90,5 +105,11 @@ let firstDoublyList = new DoublyLinkedList();
 firstDoublyList.push("99");
 firstDoublyList.push("22");
 firstDoublyList.push("11");
-display(firstDoublyList.pop());
-display(firstDoublyList)
+firstDoublyList.push("1345");
+firstDoublyList.push("1400");
+firstDoublyList.push("1800");
+firstDoublyList.push("wool");
+firstDoublyList.push("sock");
+firstDoublyList.push("hat");
+
+display(firstDoublyList.get(3))
